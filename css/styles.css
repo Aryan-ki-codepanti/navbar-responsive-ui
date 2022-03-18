@@ -90,9 +90,7 @@
     transform: rotate(90deg);
 }
 
-
-
-.submenu{
+.submenu {
     position: absolute;
     top: 100%;
     width: 5rem;
@@ -105,30 +103,28 @@
     opacity: 1;
 }
 
-.submenu .submenu__list{
+.submenu .submenu__list {
     background-color: var(--bg-primary);
     border-radius: 0 0 6px 6px;
 }
 
-.submenu .submenu__list > li{
+.submenu .submenu__list > li {
     list-style: none;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 3rem;
     border-radius: 0 0 6px 6px;
-
 }
-.submenu .submenu__list > li:hover{
+.submenu .submenu__list > li:hover {
     background: var(--bg-secondary);
 }
 
-.submenu .submenu__list > li:hover > a{
+.submenu .submenu__list > li:hover > a {
     color: var(--text-secondary);
-
 }
 
-.submenu .submenu__list > li > a{
+.submenu .submenu__list > li > a {
     text-decoration: none;
     color: var(--text-primary);
 }
