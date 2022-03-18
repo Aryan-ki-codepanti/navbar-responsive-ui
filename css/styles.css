@@ -1,9 +1,8 @@
-
-:root{
+:root {
     --nav-height: 5rem;
-    --bg-primary: #2A2438;
-    --bg-secondary: #5C5470;
-    --text-primary: #DBD8E3;
+    --bg-primary: #2a2438;
+    --bg-secondary: #5c5470;
+    --text-primary: #dbd8e3;
     --text-secondary: #fff;
     --transition-speed: 400ms;
 }
@@ -17,15 +16,14 @@
     font-family: "Open Sans";
 }
 
-.navbar{
+.navbar {
     height: var(--nav-height);
     display: flex;
     justify-content: space-between;
     background: var(--bg-primary);
 }
 
-
-.logo{
+.logo {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -34,21 +32,21 @@
     cursor: pointer;
 }
 
-.logo .logo__img{
+.logo .logo__img {
     height: 2rem;
     background: #fff;
     padding: 0.2em;
 }
-.logo .logo__name{
+.logo .logo__name {
     font-weight: 700;
     font-size: 1.5rem;
-    color: var(--text-primary)
+    color: var(--text-primary);
 }
-.navbar-nav{
+.navbar-nav {
     display: flex;
     align-items: center;
 }
-.navbar-nav .nav-item{
+.navbar-nav .nav-item {
     list-style: none;
     height: 100%;
     line-height: var(--nav-height);
@@ -57,17 +55,80 @@
     transition: all var(--transition-speed) ease;
 }
 
-.navbar-nav .nav-item .nav-link{
+.navbar-nav .nav-item .nav-link {
     text-decoration: none;
     color: var(--text-primary);
     font-weight: 500;
     transition: all var(--transition-speed) ease;
 }
 
-.navbar-nav .nav-item:hover{
+.navbar-nav .nav-item:hover {
     background: var(--bg-secondary);
 }
-.navbar-nav .nav-item:hover .nav-link{
+.navbar-nav .nav-item:hover .nav-link {
     color: var(--text-secondary);
 }
 
+.nav-item:last-child {
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+    position: relative;
+}
+
+.arrow {
+    transition: all var(--transition-speed) ease;
+}
+
+.arrow path {
+    fill: var(--text-primary);
+}
+
+/* Submenu */
+
+.nav-item.show .arrow {
+    transform: rotate(90deg);
+}
+
+
+
+.submenu{
+    position: absolute;
+    top: 100%;
+    width: 5rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: all var(--transition-speed) ease;
+}
+.nav-item.show .submenu {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.submenu .submenu__list{
+    background-color: var(--bg-primary);
+    border-radius: 0 0 6px 6px;
+}
+
+.submenu .submenu__list > li{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3rem;
+    border-radius: 0 0 6px 6px;
+
+}
+.submenu .submenu__list > li:hover{
+    background: var(--bg-secondary);
+}
+
+.submenu .submenu__list > li:hover > a{
+    color: var(--text-secondary);
+
+}
+
+.submenu .submenu__list > li > a{
+    text-decoration: none;
+    color: var(--text-primary);
+}
